@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Переписывай тексты в стиле любимых персонажей.">
+  <title>Talk Like Other Characters</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="hero">
+      <div class="eyebrow">CHARACTER AI · CREATIVE TEXT LAB</div>
+      <h1>Говори как <span>другие персонажи</span></h1>
+      <p>Выбери персонажа, напиши текст и получи его новую версию.</p>
+    </header>
+
+    <section class="panel">
+      <div class="section-heading"><span class="number">01</span><h2>Выбери персонажа</h2></div>
+      <div class="characters" id="characters">
+        <button class="character selected" data-character="tony" type="button"><strong>Тони Старк</strong><small>Остроумие и уверенность</small></button>
+        <button class="character" data-character="elon" type="button"><strong>Илон Маск</strong><small>Технологии и амбиции</small></button>
+        <button class="character" data-character="ronaldo" type="button"><strong>Криштиану Роналду</strong><small>Спорт и мотивация</small></button>
+        <button class="character" data-character="prime" type="button"><strong>Рик Прайм</strong><small>Холодно и самоуверенно</small></button>
+        <button class="character" data-character="c137" type="button"><strong>Рик C-137</strong><small>Сарказм и научный хаос</small></button>
+        <button class="character" data-character="custom" type="button"><strong>Свой персонаж</strong><small>Задай собственный стиль</small></button>
+      </div>
+      <div id="customBox" class="custom-box hidden">
+        <label for="customStyle">Опиши своего персонажа</label>
+        <input id="customStyle" maxlength="500" placeholder="Например: спокойный детектив с сухим юмором">
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="section-heading"><span class="number">02</span><h2>Твой текст</h2></div>
+      <textarea id="sourceText" maxlength="3000" placeholder="Напиши здесь текст, который нужно переписать..."></textarea>
+      <div class="meta"><span>Язык оригинала будет сохранён</span><span id="counter">0 / 3000</span></div>
+      <button id="rewrite" class="primary" type="button">✦ Переписать</button>
+      <p id="status" class="status" role="status"></p>
+    </section>
+
+    <section id="resultPanel" class="panel hidden">
+      <div class="section-heading"><span class="number">03</span><h2>Результат</h2></div>
+      <div id="result" class="result"></div>
+      <button id="copy" class="secondary" type="button">Скопировать текст</button>
+    </section>
+    <footer>CHARACTER AI · Творческая лаборатория текста</footer>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>
